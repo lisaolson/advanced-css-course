@@ -6,3 +6,40 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Inherited by all elements */
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+}
+
+.header {
+    /* 95% of viewport height */
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(126, 213, 111, 0.801),
+        rgba(40, 180, 133, 0.801)),
+        url("../img/hero.jpg");
+    /* follow width of viewport/element */
+    background-size: cover;
+    /* top stays the same, bottom changes */
+    background-position: top;
+    /* specifies polygon in which the el is still visible */
+    /* 0 0 in the top left, 100 0 in the top right */
+    /* 100 in the bottom right, 200px on the y axis */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}  
+
+
