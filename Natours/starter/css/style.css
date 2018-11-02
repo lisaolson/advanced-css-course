@@ -71,6 +71,19 @@ body {
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+
+    /* Other animation functions */
+    /* Starts faster and then is slower at the end */
+/*   
+    animation-timing-function: ease-out;
+    animation-delay: 3s;
+*/
+    /* happens 3 times */
+/*  animation-iteration-count: 3; */
+    
 }
 
 .heading-primary-sub {
@@ -78,5 +91,43 @@ body {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+
+    animation-name: moveInRight;
+    animation-duration: 1.5s;
 }
 
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        /* move in from left to right */
+        transform: translateX(-100px);
+    }
+
+    80% {
+        /* intermediate position slightly to the right */
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        /* move in from left to right */
+        transform: translateX(100px);
+    }
+
+    80% {
+        /* intermediate position slightly to the right */
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
