@@ -63,7 +63,12 @@ body {
 
 .heading-primary {
     color: #fff;
-    text-transform: uppercase;
+    text-transform: uppercase; 
+
+    /* determines if back part of an element
+    is visible when you transform it 
+    removes - shakiness - bug */
+    backface-visibility: hidden;
 }
 
 .heading-primary-main {
@@ -92,14 +97,13 @@ body {
     font-weight: 700;
     letter-spacing: 17.4px;
 
-    animation-name: moveInRight;
-    animation-duration: 1.5s;
+    animation: moveInRight 1.5s ease-out;
 }
 
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        /* move in from left to right */
+        /* goes backward in the x direction */
         transform: translateX(-100px);
     }
 
@@ -117,7 +121,7 @@ body {
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        /* move in from left to right */
+        /* goes forward in the x direction */
         transform: translateX(100px);
     }
 
