@@ -20,6 +20,7 @@ This repo contains three websites I completed as part of an advanced Front End C
 
 ### Usage
 ```git clone https://github.com/lisaolson/advanced-css-course```
+
 ```open index.html```
 
 #### Author
