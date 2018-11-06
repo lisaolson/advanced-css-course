@@ -138,6 +138,20 @@ body {
         transform: translate(0);
     }
 }
+
+@keyframes moveInButton {
+    0% {
+        opacity: 0;
+        /* goes forward in the x direction */
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
 /* link pseduo-class is a special state when a link is visited */
 .btn:link,
 .btn:visited {
@@ -149,6 +163,7 @@ body {
     display: inline-block;
     border-radius: 100px;
     transition: all .2s;
+    position: relative;
 }
 
 .btn:hover {
@@ -164,4 +179,37 @@ body {
 .btn-white {
     background-color: #fff;
     color: #777;
+}
+
+/* appears behind the button */
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+/* after pseudo element after the hover */
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    /* opacity 0 to fade something out */
+    opacity: 0;
+}
+
+.btn-animated {
+    /* last field is .75s delay */
+    animation: moveInButton .5s ease-out .75s;
+
+    /* automatically applies styles to 0 before animation starts */
+    animation-fill-mode: backwards;
 }
